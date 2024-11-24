@@ -24,7 +24,7 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://sports.cryptocloud9.io/:path*',
+        destination: 'https://sports.cryptocloud9.io/posts/:path*',
         permanent: false,
       },
       {
