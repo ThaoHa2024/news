@@ -38,7 +38,7 @@ module.exports = {
             key: 'referer',
           }
         ],
-        destination: 'https://sports.cryptocloud9.io/posts/:path*',
+        destination: 'https://sports.cryptocloud9.io/:path*',
         permanent: false,
       },
       
