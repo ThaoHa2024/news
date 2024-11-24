@@ -12,9 +12,6 @@ module.exports = {
     domains: [
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
       'sports.cryptocloud9.io',
-      'speed.cryptocloud9.io',
-      'news.cryptocloud9.io',
-      'cryptocloud9.io',
     ],
   },
   async redirects() {
@@ -27,7 +24,7 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://sports.cryptocloud9.io/posts/:path*',
+        destination: 'https://sports.cryptocloud9.io/:path*',
         permanent: false,
       },
       {
