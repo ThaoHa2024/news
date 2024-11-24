@@ -11,10 +11,10 @@ module.exports = {
     unoptimized: true,
     domains: [
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
-      '0.gravatar.com',
-      '1.gravatar.com',
-      '2.gravatar.com',
-      'secure.gravatar.com',
+      'sports.cryptocloud9.io',
+      'speed.cryptocloud9.io',
+      'news.cryptocloud9.io',
+      'cryptocloud9.io',
     ],
   },
   async redirects() {
@@ -27,7 +27,7 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://caramazing.net/posts/:path*',
+        destination: 'https://sports.cryptocloud9.io/posts/:path*',
         permanent: false,
       },
       {
@@ -38,7 +38,7 @@ module.exports = {
             key: 'referer',
           }
         ],
-        destination: 'https://caramazing.net/posts/:path*',
+        destination: 'https://sports.cryptocloud9.io/posts/:path*',
         permanent: false,
       },
       
