@@ -24,7 +24,7 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://sports.cryptocloud9.io/posts/:path*',
+        destination: 'https://sports.pheats.site/posts/:path*',
         permanent: false,
       },
       {
@@ -35,7 +35,7 @@ module.exports = {
             key: 'referer',
           }
         ],
-        destination: 'https://sports.cryptocloud9.io/:path*',
+        destination: 'https://sports.pheats.site/:path*',
         permanent: false,
       },
       
