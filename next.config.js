@@ -11,7 +11,7 @@ module.exports = {
     unoptimized: true,
     domains: [
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
-      'sports.cryptocloud9.io',
+      'sports.pheats.site',
     ],
   },
   async redirects() {
@@ -24,11 +24,11 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://sports.pheats.site/posts/:path*',
+        destination: 'https://nbafandom.net/posts/:path*',
         permanent: false,
       },
       {
-        source: '/posts/:path*',
+        source: '/:path*',
         has: [
           {
             type: 'header',
