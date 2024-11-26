@@ -24,7 +24,7 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://nbafandom.net/posts/:path*',
+        destination: 'https://sports.pheats.site/posts/:path*',
         permanent: false,
       },
       {
