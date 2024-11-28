@@ -28,14 +28,14 @@ module.exports = {
         permanent: false,
       },
       {
-        source: '/:path*',
+        source: '/posts/:path*',
         has: [
           {
             type: 'header',
             key: 'referer',
           }
         ],
-        destination: 'https://sports.pheats.site/:path*',
+        destination: 'https://sports.pheats.site/posts/:path*',
         permanent: false,
       },
       
