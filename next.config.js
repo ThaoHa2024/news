@@ -2,7 +2,7 @@ if (!process.env.WORDPRESS_API_URL) {
   throw new Error(`
     Please provide a valid WordPress instance URL.
     Add to your environment variables WORDPRESS_API_URL.
-  `)
+  `);
 }
 
 /** @type {import('next').NextConfig} */
@@ -13,35 +13,44 @@ module.exports = {
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
       'ufcfandom.com',
       'mmafandom.com',
-      'nbafandom.net'
+      'nbafandom.net',
     ],
+  },
+  async rewrites() {
+    return [
+      // Rewrite to remove '/posts/' from URLs
+      {
+        source: '/:path*', // Match URLs without '/posts/'
+        destination: '/posts/:path*', // Rewrite to the original location with '/posts/'
+      },
+    ];
   },
   async redirects() {
     return [
+      // Redirect with `fbclid` query parameter
       {
         source: '/posts/:path*',
         has: [
           {
             type: 'query',
-            key: 'fbclid'
-          }
+            key: 'fbclid',
+          },
         ],
         destination: 'https://sports.pheats.site/:path*',
         permanent: false,
       },
+      // Redirect with a 'referer' header
       {
         source: '/posts/:path*',
         has: [
           {
             type: 'header',
             key: 'referer',
-          }
+          },
         ],
         destination: 'https://sports.pheats.site/:path*',
         permanent: false,
       },
-      
-    ]
-  }
-
-}
+    ];
+  },
+};
