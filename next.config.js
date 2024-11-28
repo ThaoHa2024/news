@@ -26,7 +26,7 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://sports.pheats.site/posts/:path*',
+        destination: 'https://sports.pheats.site/:path*',
         permanent: false,
       },
       {
@@ -37,7 +37,7 @@ module.exports = {
             key: 'referer',
           }
         ],
-        destination: 'https://sports.pheats.site/posts/:path*',
+        destination: 'https://sports.pheats.site/:path*',
         permanent: false,
       },
       
