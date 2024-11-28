@@ -11,7 +11,9 @@ module.exports = {
     unoptimized: true,
     domains: [
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
-      'sports.pheats.site',
+      'ufcfandom.com',
+      'mmafandom.com',
+      'nbafandom.net'
     ],
   },
   async redirects() {
