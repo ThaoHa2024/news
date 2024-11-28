@@ -18,10 +18,10 @@ module.exports = {
   },
   async rewrites() {
     return [
-      // Rewrite to remove '/posts/' from URLs
+      // Rewrite to remove '/posts/' from visible URLs
       {
-        source: '/:path*', // Match URLs without '/posts/'
-        destination: '/posts/:path*', // Rewrite to the original location with '/posts/'
+        source: '/:slug*', // Match URLs without `/posts/`
+        destination: '/posts/:slug*', // Rewrite internally to `/posts/`
       },
     ];
   },
