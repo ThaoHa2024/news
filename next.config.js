@@ -13,7 +13,8 @@ module.exports = {
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
       'celebritieshub.net',
       'buzzdrama.us',
-      'superstarfandom.com'
+      'superstarfandom.com',
+      'mysteryarea.com',
     ],
   },
   async rewrites() {
