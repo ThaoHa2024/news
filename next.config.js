@@ -11,9 +11,21 @@ module.exports = {
     unoptimized: true,
     domains: [
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
-      'sports.pheats.site',
+      'celebritieshub.net',
+      'buzzdrama.us',
+      'superstarfandom.com'
     ],
   },
+  async rewrites() {
+    return [
+      // Rewrite to remove '/posts/' from visible URLs
+      {
+        source: '/:slug*', // Match URLs without `/posts/`
+        destination: '/posts/:slug*', // Rewrite internally to `/posts/`
+      },
+    ];
+  },
+  
   async redirects() {
     return [
       {
@@ -24,18 +36,18 @@ module.exports = {
             key: 'fbclid'
           }
         ],
-        destination: 'https://sports.pheats.site/posts/:path*',
+        destination: 'https://news.dhpplant.com/:path*',
         permanent: false,
       },
       {
-        source: '/:path*',
+        source: '/posts/:path*',
         has: [
           {
             type: 'header',
             key: 'referer',
           }
         ],
-        destination: 'https://sports.pheats.site/:path*',
+        destination: 'https://news.dhpplant.com/:path*',
         permanent: false,
       },
       
