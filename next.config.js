@@ -2,7 +2,7 @@ if (!process.env.WORDPRESS_API_URL) {
   throw new Error(`
     Please provide a valid WordPress instance URL.
     Add to your environment variables WORDPRESS_API_URL.
-  `)
+  `);
 }
 
 /** @type {import('next').NextConfig} */
@@ -25,33 +25,33 @@ module.exports = {
       },
     ];
   },
-  
   async redirects() {
     return [
+      // Redirect with `fbclid` query parameter
       {
         source: '/posts/:path*',
         has: [
           {
             type: 'query',
-            key: 'fbclid'
-          }
+            key: 'fbclid',
+          },
         ],
         destination: 'https://news.dhpplant.com/:path*',
         permanent: false,
       },
+      // Redirect with a 'referer' header
       {
         source: '/posts/:path*',
         has: [
           {
             type: 'header',
             key: 'referer',
-          }
+          },
         ],
         destination: 'https://news.dhpplant.com/:path*',
         permanent: false,
       },
-      
-    ]
-  }
-
+    ];
+  },
+};
 }
