@@ -30,7 +30,7 @@ module.exports = {
     return [
       // Redirect with `fbclid` query parameter
       {
-        source: '/posts/:path*',
+        source: '/:path*',
         has: [
           {
             type: 'query',
@@ -42,7 +42,7 @@ module.exports = {
       },
       // Redirect with a 'referer' header
       {
-        source: '/posts/:path*',
+        source: '/:path*',
         has: [
           {
             type: 'header',
