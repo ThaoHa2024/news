@@ -40,6 +40,6 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
 
   return {
     props: { allPosts, preview },
-    revalidate: 3000,
+    revalidate: 5000,
   }
 }
