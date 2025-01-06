@@ -35,7 +35,7 @@ module.exports = {
             key: 'fbclid',
           },
         ],
-        destination: 'https://news.humatl.com/:path*',
+        destination: 'https://news.dhpplant.com/:path*',
         permanent: false,
       },
       // Redirect with a 'referer' header
@@ -47,7 +47,7 @@ module.exports = {
             key: 'referer',
           },
         ],
-        destination: 'https://news.humatl.com/:path*',
+        destination: 'https://news.dhpplant.com/:path*',
         permanent: false,
       },
     ];
