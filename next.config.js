@@ -11,8 +11,8 @@ module.exports = {
     unoptimized: true,
     domains: [
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
-      'news.dhpplant.com',
-      'dhpplant.com'
+      'news.humatl.com/',
+      'humatl.com/'
     ],
   },
   async rewrites() {
@@ -35,7 +35,7 @@ module.exports = {
             key: 'fbclid',
           },
         ],
-        destination: 'https://news.dhpplant.com/:path*',
+        destination: 'https://news.humatl.com/:path*',
         permanent: false,
       },
       // Redirect with a 'referer' header
@@ -47,7 +47,7 @@ module.exports = {
             key: 'referer',
           },
         ],
-        destination: 'https://news.dhpplant.com/:path*',
+        destination: 'https://news.humatl.com/:path*',
         permanent: false,
       },
     ];
