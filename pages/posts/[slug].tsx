@@ -18,7 +18,10 @@ import {JSDOM} from 'jsdom';
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
-
+  const imageSize = {
+  width: 1200, // Set default width
+  height: 630, // Set default height
+  }
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
@@ -40,8 +43,8 @@ export default function Post({ post, posts, preview }) {
                   property="og:image"
                   content={post.featuredImage?.node.sourceUrl}
                 />
-                <meta property="og:image:width" content={imageSize.width} />
-                <meta property="og:image:height" content={imageSize.height} />
+                <meta property="og:image:width" content={imageSize.width.toString()} />
+                <meta property="og:image:height" content={imageSize.height.toString()} />
                 <meta
                   property="og:description"
                   content={post.excerpt || ''}
