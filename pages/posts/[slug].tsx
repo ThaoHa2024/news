@@ -40,6 +40,8 @@ export default function Post({ post, posts, preview }) {
                   property="og:image"
                   content={post.featuredImage?.node.sourceUrl}
                 />
+                <meta property="og:image:width" content={imageSize.width} />
+                <meta property="og:image:height" content={imageSize.height} />
                 <meta
                   property="og:description"
                   content={post.excerpt || ''}
