@@ -4,8 +4,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "npx browserslist@latest --update-db"
+    "lint": "next lint"
   },
   "dependencies": {
     "@types/node": "^18.6.3",
